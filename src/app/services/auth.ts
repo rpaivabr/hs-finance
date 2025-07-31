@@ -1,10 +1,10 @@
 import { inject, Injectable } from "@angular/core";
-import { Auth, authState, GoogleAuthProvider, signInWithPopup, signOut, User, UserCredential } from "@angular/fire/auth";
+import { Auth as FirebaseAuth, authState, GoogleAuthProvider, signInWithPopup, signOut, User, UserCredential } from "@angular/fire/auth";
 import { map, Observable, tap } from "rxjs";
 
 @Injectable({ providedIn: 'root' })
-export class AuthService {
-  private auth: Auth = inject(Auth);
+export class Auth {
+  private auth = inject(FirebaseAuth);
   private authState$ = authState(this.auth);
 
   loggedUser$: Observable<User | null> = this.authState$.pipe(tap(user => console.log('Auth State:', user)));

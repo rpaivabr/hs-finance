@@ -1,5 +1,5 @@
 import { Component, inject } from "@angular/core";
-import { AuthService } from "./auth.service";
+import { Auth } from "../services/auth";
 import { Router } from "@angular/router";
 
 @Component({
@@ -10,12 +10,12 @@ import { Router } from "@angular/router";
     <button (click)="login()">Login with Google</button>
   `,
 })
-export class LoginComponent {
-  private authService = inject(AuthService);
+export class Login {
+  private auth = inject(Auth);
   private router = inject(Router);
 
   login() {
-    this.authService.login().then(() => {
+    this.auth.login().then(() => {
       this.router.navigate(['/home']);
     });
   }

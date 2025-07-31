@@ -5,7 +5,17 @@
   "projects": {
     "hs-finance": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "flat": true,
+          "inlineTemplate": true,
+          "inlineStyle": true,  
+          "skipTests": true        
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -22,6 +32,7 @@
               }
             ],
             "styles": [
+              "src/custom-theme.scss",
               "src/styles.css"
             ]
           },

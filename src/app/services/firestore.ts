@@ -1,11 +1,11 @@
 import { inject, Injectable } from "@angular/core";
-import { addDoc, collection, collectionData, CollectionReference, deleteDoc, doc, Firestore, getDoc, updateDoc } from "@angular/fire/firestore";
-import { Transaction } from "./transaction";
+import { addDoc, collection, collectionData, CollectionReference, deleteDoc, doc, Firestore as FirebaseFirestore, getDoc, updateDoc } from "@angular/fire/firestore";
+import { Transaction } from "../models/transaction";
 import { from, map, Observable, tap } from "rxjs";
 
 @Injectable({ providedIn: 'root' })
-export class FirestoreService {
-  private firestore = inject(Firestore);
+export class Firestore {
+  private firestore = inject(FirebaseFirestore);
   private readonly collectionRef = collection(this.firestore, 'transactions');
   private readonly docRef = (id: string) => doc(this.firestore, 'transactions', id);
   /**
