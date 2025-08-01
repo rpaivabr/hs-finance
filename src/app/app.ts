@@ -15,7 +15,7 @@ import { Navbar } from './components/navbar';
   `,
   styles: `
   main {
-    height: calc(100vh - 60px);
+    height: calc(100dvh - 60px);
     padding: 0 10px 10px 10px;
     overflow: auto;
   }
