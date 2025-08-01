@@ -7,86 +7,78 @@ import { MatCardModule } from '@angular/material/card';
   selector: 'app-transactions',
   imports: [MatFormFieldModule, MatCardModule, MatInputModule],
   template: `
-    <div class="container">
-      <div class="w-full">
-        <p>transactions works!</p>
+      <h2>Transações</h2>
+      <div class="section">
         <!-- Campo de busca -->
         <mat-form-field appearance="outline" class="w-full">
           <mat-label>Procurar conta</mat-label>
-          <input matInput placeholder="Digite o nome da conta" class="w-full"/>
+          <input matInput placeholder="Digite o nome da conta" />
         </mat-form-field>
       </div>
-      <h6 class="mini-cards-title">Visão geral</h6>
-      <div class="card-container">
-        <!-- Card principal -->
-        <!-- Card 1 -->
-        <!-- <mat-card class="mini-card" appearance="outlined">
-          <mat-card-title>Receita</mat-card-title>
-          <mat-card-content>
-            <p>R$ 2.500</p>
-          </mat-card-content>
-        </mat-card> -->
 
-        <!-- Card 2 -->
-        <!-- <mat-card class="mini-card" appearance="outlined">
-          <mat-card-title>Despesas</mat-card-title>
-          <mat-card-content>
-            <p>R$ 1.200</p>
-          </mat-card-content>
-        </mat-card> -->
+      <div class="section">
+        <h3>Visão geral</h3>
+        <div class="card-list">
+          <mat-card class="card success" appearance="outlined">
+            <mat-card-header>
+              <mat-card-title>Receitas</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <p class="value">R$ 2.500</p>
+            </mat-card-content>
+          </mat-card>
 
-        <!-- Card 3 -->
-        <!-- <mat-card class="mini-card" appearance="outlined">
-          <mat-card-title>Saldo</mat-card-title>
-          <mat-card-content>
-            <p>R$ 1.300</p>
-          </mat-card-content>
-        </mat-card> -->
+          <mat-card class="card error" appearance="outlined">
+            <mat-card-header>
+              <mat-card-title>Despesas</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <p class="value">R$ 2.500</p>
+            </mat-card-content>
+          </mat-card>
+
+          <mat-card class="card info" appearance="outlined">
+            <mat-card-header>
+              <mat-card-title>Saldo</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <p class="value">R$ 2.500</p>
+            </mat-card-content>
+          </mat-card>
+        </div>
       </div>
-    </div>
   `,
   styles: `
-
-    .container {
-      width: 100%;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 10px;
+    .card-list {
+      display: flex;
+      gap: 8px;
     }
-
-    .w-full {
-      width: 100%
+    .card {
+      flex: 1;
     }
-    // .form-wrapper {
-    //   height: 100vh;
-    //   width: 100%
-    //   margin: 0;
-    //   margin: 16px
-    //   align-items: center;
-    //   justify-content: center;
-    // }
-
-    // .card-container {
-    //   padding: 0 16px;
-    //   display: flex;
-    //   gap: 8px;
-    //   margin: 16px;
-    //   box-sizing: border-box;
-    // }
-
-    // .mini-card-title {
-    //   margin: 16px;
-    // }
-
-    // .mini-cards {
-    // }
-
-    // mat-form-field {
-    //   width: 100%;
-    // }
-    // mat-card-title {
-    //   margin: 8px;
-    // }
+    mat-card-header {
+      font-size: clamp(1.5rem, 2.2vw, 2rem);
+    }
+    mat-card-content {
+      padding-top: 10px;
+      font-size: clamp(1.2rem, 2vw, 1.8rem);
+    }
+    .success {
+      background-color: green;
+      color: white;
+    }
+    .error {
+      background-color: red;
+      color: white;
+    }
+    .warning {
+      background-color: orange;
+      color: white;
+    }
+    .info {
+      background-color: blue;
+      color: white;
+    }
   `,
 })
-export class Transactions {}
+export class Transactions { }

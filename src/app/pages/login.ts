@@ -5,7 +5,7 @@ import { Router } from "@angular/router";
 @Component({
   selector: 'app-login',
   template: `
-    <h1>Login Page</h1>
+    <h2>Login Page</h2>
     <p>Please log in to access the application.</p>
     <button (click)="login()">Login with Google</button>
   `,

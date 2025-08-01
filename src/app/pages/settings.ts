@@ -4,9 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-settings',
   imports: [],
   template: `
-    <p>
-      settings works!
-    </p>
+    <h2>Configurações</h2>
   `,
   styles: ``
 })
